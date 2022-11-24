@@ -22,6 +22,19 @@
         </header>
         <main>
             <figure id="luigi_background"><img class="luigi_background" src="./images/luigi_background.jpg" alt="Luigi at a casino table, dressed as a card dealer"></figure>
+            <aside>
+                <h3 id="results_text">Results</h3>
+            </aside>
+            <div id="tutorial_text">
+                <h3>How to Play</h3>
+                <ul>
+                    <li>You and the computer each roll a pair of dice 3 times.</li>
+                    <li>After the third roll, whoever has the highest score wins.</li>
+                    <li>Rolling the same number twice doubles the points earned.</li>
+                    <li>Rolling a 1 earns no points.</li>
+                </ul>
+                <button id="close_info">X</button>
+            </div>
             <section>
                 <div id="score_display">
                     <div id="player_score" class="user_score">
@@ -47,9 +60,12 @@
                     <h4 id="rolls_left" class="score_text"> Rolls remaining: 3</h4>
                     <button id="roll_button">Roll</button>
                     <button id="reset_button">New Game</button>
+                    <button id="info_button">How to Play</button>
                 </div>
             </section>
         </main>
-        <footer><h3>Gurjeet Bhangoo - COMP 2132</h3></footer>
+        <footer>
+            <h3>Gurjeet Bhangoo - COMP 2132</h3>
+        </footer>
     </body>
 </html>

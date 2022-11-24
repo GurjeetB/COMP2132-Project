@@ -5,12 +5,19 @@ $border_color: #005A19;
 $background_color: #004E1A;
 $text_color: #0065FF;
 $button_color: #FAFAB2;
-$button_selected_color: #E3DB96;
+$button_selected_color: #827d4f;
 $rounded_rectangle_color: #ADA872;
 
 @mixin rounded_rectangle(){
     background-color: $rounded_rectangle_color;
     border-radius: 1em;
+}
+
+@mixin center_of_screen($xoffset, $yoffset){
+    position: absolute;
+    top: calc($yoffset);
+    right: calc($xoffset);
+    transform: translate(50%, 50%);
 }
 
 body{
@@ -54,6 +61,9 @@ button{
     font-family: 'Fredoka One', sans-serif;
     border-radius: 1em;
 }
+button:hover{
+    cursor: pointer;
+}
 button:active{
     background-color: $button_selected_color;
 }
@@ -69,6 +79,12 @@ img{
     height: auto;
     object-fit: cover;
 }
+aside{
+    position: absolute;
+    top: calc(15%);
+    right: calc(50%);
+    transform: translate(50%, 50%);
+}
 
 .user_score{
     display: flex;
@@ -83,9 +99,28 @@ img{
     justify-content: space-between;
 }
 
+.disabled_button{
+    background-color: $button_selected_color;
+}
+.disabled_button:hover{
+    cursor: default;
+}
+
+.player_wins{
+    color: red;
+}
+.computer_wins{
+    color: purple;
+}
+
 .score_text{
     text-align: center;
     color: $text_color;
+}
+
+#results_text{
+    font-size: 2em;
+    -webkit-text-stroke: 1px black;
 }
 
 #score_display{
@@ -94,6 +129,18 @@ img{
     flex-direction: row;
     justify-content: space-between;
     width: 75%;
+}
+
+#tutorial_text{
+    @include center_of_screen(50%, 0%);
+    @include rounded_rectangle;
+    background-color: $border_color;
+    color: white;
+    padding: 1em;
+
+    ul{
+        padding-left: 1em;
+    }
 }
 
 #ui_buttons{

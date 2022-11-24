@@ -45,8 +45,12 @@ button {
   border-radius: 1em;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 button:active {
-  background-color: #E3DB96;
+  background-color: #827d4f;
 }
 
 figure {
@@ -63,6 +67,13 @@ img {
      object-fit: cover;
 }
 
+aside {
+  position: absolute;
+  top: 15%;
+  right: 50%;
+  transform: translate(50%, 50%);
+}
+
 .user_score {
   display: flex;
   flex-direction: column;
@@ -77,9 +88,30 @@ img {
   justify-content: space-between;
 }
 
+.disabled_button {
+  background-color: #827d4f;
+}
+
+.disabled_button:hover {
+  cursor: default;
+}
+
+.player_wins {
+  color: red;
+}
+
+.computer_wins {
+  color: purple;
+}
+
 .score_text {
   text-align: center;
   color: #0065FF;
+}
+
+#results_text {
+  font-size: 2em;
+  -webkit-text-stroke: 1px black;
 }
 
 #score_display {
@@ -88,6 +120,21 @@ img {
   flex-direction: row;
   justify-content: space-between;
   width: 75%;
+}
+
+#tutorial_text {
+  position: absolute;
+  top: 0%;
+  right: 50%;
+  transform: translate(50%, 50%);
+  background-color: #ADA872;
+  border-radius: 1em;
+  background-color: #005A19;
+  color: white;
+  padding: 1em;
+}
+#tutorial_text ul {
+  padding-left: 1em;
 }
 
 #ui_buttons {

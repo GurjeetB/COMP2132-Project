@@ -45,6 +45,9 @@ class User{
             // For any other result, gets the score
             this.currentScore = this.die1.value + this.die2.value;
         }
+
+        // Adds the current score to the user's total
+        this.totalScore += this.currentScore;
     }
     updateDisplayScore(){
         // Updates the dice rolls
@@ -56,6 +59,19 @@ class User{
         $(`#${this.name}_current_total`).text(`Total: ${this.totalScore}`)
     }
 }
+
+// Hides the tutorial text upon page load
+$(`#tutorial_text`).hide();
+
+// Shows the tutorial text upon clicking the How to Play button
+$(`#info_button`).click(function(){
+    $(`#tutorial_text`).fadeIn();
+});
+
+// Hides the tutorial text upon clicking the close button
+$(`#close_info`).click(function(){
+    $(`#tutorial_text`).fadeOut();
+});
 
 
 // Upon page load, initializes two users
@@ -71,10 +87,37 @@ function resetGame(){
     player02.resetScore();
     player01.updateDisplayScore();
     player02.updateDisplayScore();
+
+    rollsLeft = 3;
+
+    $(`aside`).hide();
+    $(`aside`).removeClass(`player_wins`);
+    $(`aside`).removeClass(`computer_wins`);
+
+    // Re-enables the Roll button
+    $(`#roll_button`).prop(`disabled`, ``);
+    $(`#roll_button`).removeClass(`disabled_button`);
 }
 
 // Resets the game, just to be sure
 resetGame();
+
+// Defines the function for ending the game
+function endGame(){
+        // If the player's score is higher than the CPU's
+        if(player01.totalScore >= player02.totalScore){
+            $(`aside`).addClass(`player_wins`);
+            $(`#results_text`).text(`You Win!`);
+        }else{
+            $(`aside`).addClass(`computer_wins`);
+            $(`#results_text`).text(`Too Bad`);
+        }
+        $(`aside`).fadeIn();
+
+        // Disables the Roll button
+        $(`#roll_button`).prop(`disabled`, `true`);
+        $(`#roll_button`).addClass(`disabled_button`);
+}
 
 // Defines the function for having both players roll
 function readEmAndWeep(){
@@ -87,10 +130,11 @@ function readEmAndWeep(){
     // Updates the DOM to show current scores
     player01.updateDisplayScore();
     player02.updateDisplayScore();
+
+    rollsLeft--;
+    $(`#rolls_left`).text(`Rolls remaining: ${rollsLeft}`);
     if(rollsLeft <= 0){
-        console.log('game end');
-    }else{
-        // rollsLeft--;
+        endGame();
     }
 }
 

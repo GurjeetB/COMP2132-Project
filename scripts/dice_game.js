@@ -62,6 +62,8 @@ class User{
 // The Player and the CPU
 let player01 = new User(`player`);
 let player02 = new User(`cpu`);
+// Initializes the amount of rolls remaining
+let rollsLeft = 3;
 
 // Defines the function for resetting all game stats
 function resetGame(){
@@ -74,9 +76,8 @@ function resetGame(){
 // Resets the game, just to be sure
 resetGame();
 
-
-// Upon clicking the roll button
-$(`#roll_button`).click(function(){
+// Defines the function for having both players roll
+function readEmAndWeep(){
     // Rolls dice
     player01.rollDice();
     player02.rollDice();
@@ -86,7 +87,16 @@ $(`#roll_button`).click(function(){
     // Updates the DOM to show current scores
     player01.updateDisplayScore();
     player02.updateDisplayScore();
-})
+    if(rollsLeft <= 0){
+        console.log('game end');
+    }else{
+        // rollsLeft--;
+    }
+}
+
+
+// Upon clicking the roll button
+$(`#roll_button`).click(readEmAndWeep)
 
 // Upon clicking the New Game button
 $(`#reset_button`).click(resetGame)

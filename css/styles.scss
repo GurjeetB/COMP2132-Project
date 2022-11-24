@@ -2,6 +2,7 @@
 $ds_color: #F8F3F7;
 $luigi_color: #1A940D;
 $border_color: #005A19;
+$background_color: #004E1A;
 $text_color: #0065FF;
 $button_color: #FAFAB2;
 $button_selected_color: #E3DB96;
@@ -19,7 +20,7 @@ body{
     margin: auto;
     display: flex;
     flex-direction: column;
-    background-color: $border_color;
+    background-color: $background_color;
 }
 header, footer{
     background-color: $border_color;

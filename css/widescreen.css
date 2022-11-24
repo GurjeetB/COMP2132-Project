@@ -19,3 +19,7 @@ section {
 #luigi_background {
   display: none;
 }
+
+#tutorial_text {
+  top: 0%;
+}

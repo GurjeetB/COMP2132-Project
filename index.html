@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Final Project - COMP 2132</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1.0, width=device-width">
+        
+        <link rel="stylesheet" href="./css/styles.css" media="all">
+        <link rel="stylesheet" href="./css/widescreen.css" media="(min-width: 500px)">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.6.1.min.js" defer></script>
+        <script src="./scripts/assignment08.js" defer></script>
+
+    </head>
+    <body>
+        <header>
+            <h1>Luigi's Casino</h1>
+        </header>
+        <main>
+            <figure id="luigi_background"><img class="luigi_background" src="./images/luigi_background.jpg" alt="Luigi at a casino table, dressed as a card dealer"></figure>
+            <section>
+                <div id="score_display">
+                    <div id="player_score" class="user_score">
+                        <h4 class="score_text">You</h3>
+                        <div id="player_dice" class="dice_display">
+                            <h3 id="player_die_1" class="score_text">3</h3>
+                            <h3 id="player_die_2" class="score_text">2</h3>
+                        </div>
+                        <h4 id="player_current_roll" class="score_text">5</h4>
+                        <h5 id="player_current_total" class="score_text">Total: 5</h4>
+                    </div>
+                    <div id="cpu_score" class="user_score">
+                        <h4 class="score_text">CPU</h3>
+                        <div id="cpu_dice" class="dice_display">
+                            <h3 id="cpu_die_1" class="score_text">3</h3>
+                            <h3 id="cpu_die_2" class="score_text">2</h3>
+                        </div>
+                        <h4 id="cpu_current_roll" class="score_text">5</h4>
+                        <h5 id="cpu_current_total" class="score_text">Total: 5</h4>
+                    </div>
+                </div>
+                <div id="ui_buttons">
+                    <h4 class="score_text"> Rolls remaining: 2</h4>
+                    <button id="roll_button">Roll</button>
+                    <button id="reset_button">New Game</button>
+                </div>
+            </section>
+        </main>
+        <footer><h3>Gurjeet Bhangoo - COMP 2132</h3></footer>
+    </body>
+</html>

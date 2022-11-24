@@ -1,0 +1,105 @@
+/*All color variables*/
+$ds_color: #F8F3F7;
+$luigi_color: #1A940D;
+$border_color: #005A19;
+$text_color: #0065FF;
+$button_color: #FAFAB2;
+$button_selected_color: #E3DB96;
+$rounded_rectangle_color: #ADA872;
+
+@mixin rounded_rectangle(){
+    background-color: $rounded_rectangle_color;
+    border-radius: 1em;
+}
+
+body{
+    font-family: 'Fredoka One', sans-serif;
+    min-width: 300px;
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: $border_color;
+}
+header, footer{
+    background-color: $border_color;
+    color: $button_color;
+}
+section{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+h1, h3{
+    font-size: medium;
+    text-align: center;
+}
+h4, h5{
+    margin: 0.2em 0em;
+}
+button{
+    padding: 0.1em 0.5em;
+    border: solid 2px black;
+    background-color: $button_color;
+    color: $text_color;
+    font-family: 'Fredoka One', sans-serif;
+    border-radius: 1em;
+}
+button:active{
+    background-color: $button_selected_color;
+}
+
+figure{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.user_score{
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em 1.5em;
+    @include rounded_rectangle();
+}
+
+.dice_display{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.score_text{
+    text-align: center;
+    color: $text_color;
+}
+
+#score_display{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 75%;
+}
+
+#ui_buttons{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 0.5em;
+    @include rounded_rectangle();
+}

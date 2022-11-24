@@ -1,0 +1,21 @@
+body {
+  background-image: url("../images/luigi_background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+section {
+  width: 100%;
+  margin: auto;
+}
+
+#luigi_background {
+  display: none;
+}

@@ -6,6 +6,7 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   background-color: #004E1A;
 }
 
@@ -80,6 +81,7 @@ aside {
   padding: 0.5em 0.5em;
   background-color: #ADA872;
   border-radius: 1em;
+  transition: background-color 0.5s;
 }
 
 .dice_display {
@@ -111,6 +113,10 @@ aside {
 .score_text {
   text-align: center;
   color: #0065FF;
+}
+
+.winner {
+  background-color: #F8F3F7;
 }
 
 #results_text {

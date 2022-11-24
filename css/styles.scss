@@ -27,6 +27,7 @@ body{
     margin: auto;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
     background-color: $background_color;
 }
 header, footer{
@@ -91,6 +92,7 @@ aside{
     flex-direction: column;
     padding: 0.5em 0.5em;
     @include rounded_rectangle();
+    transition: background-color 0.5s;
 }
 
 .dice_display{
@@ -119,6 +121,10 @@ aside{
 .score_text{
     text-align: center;
     color: $text_color;
+}
+
+.winner{
+    background-color: $ds_color;
 }
 
 #results_text{

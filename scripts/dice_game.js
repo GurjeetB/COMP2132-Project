@@ -89,10 +89,14 @@ function resetGame(){
     player02.updateDisplayScore();
 
     rollsLeft = 3;
+    $(`#rolls_left`).text(`Rolls remaining: ${rollsLeft}`);
 
     $(`aside`).hide();
     $(`aside`).removeClass(`player_wins`);
     $(`aside`).removeClass(`computer_wins`);
+
+    $(`#player_score`).removeClass(`winner`);
+    $(`#cpu_score`).removeClass(`winner`);
 
     // Re-enables the Roll button
     $(`#roll_button`).prop(`disabled`, ``);
@@ -108,9 +112,12 @@ function endGame(){
         if(player01.totalScore >= player02.totalScore){
             $(`aside`).addClass(`player_wins`);
             $(`#results_text`).text(`You Win!`);
+            $(`#player_score`).addClass(`winner`);
         }else{
+            // If the player's score is lower than the CPU's
             $(`aside`).addClass(`computer_wins`);
             $(`#results_text`).text(`Too Bad`);
+            $(`#cpu_score`).addClass(`winner`);
         }
         $(`aside`).fadeIn();
 

@@ -89,7 +89,7 @@ aside{
 .user_score{
     display: flex;
     flex-direction: column;
-    padding: 0.5em 1.5em;
+    padding: 0.5em 0.5em;
     @include rounded_rectangle();
 }
 
@@ -97,6 +97,9 @@ aside{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.dice_image{
+    width: 45%;
 }
 
 .disabled_button{
@@ -124,7 +127,7 @@ aside{
 }
 
 #score_display{
-    margin: auto;
+    margin: 1em auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -151,4 +154,8 @@ aside{
     margin: auto;
     padding: 0.5em;
     @include rounded_rectangle();
+}
+
+#player_score{
+    margin-right: 1em;
 }

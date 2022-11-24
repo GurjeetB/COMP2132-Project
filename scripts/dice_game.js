@@ -19,8 +19,8 @@ class User{
         this.totalScore = 0;
     }
     resetScore(){
-        this.die1.value = 0;
-        this.die2.value = 0;
+        this.die1.value = 1;
+        this.die2.value = 2;
         this.currentScore = 0;
         this.totalScore = 0;
     }
@@ -51,8 +51,8 @@ class User{
     }
     updateDisplayScore(){
         // Updates the dice rolls
-        $(`#${this.name}_die_1`).text(`${this.die1.value}`);
-        $(`#${this.name}_die_2`).text(`${this.die2.value}`);
+        $(`#${this.name}_die_1`).attr(`src`,`./images/dice${this.die1.value}.png`);
+        $(`#${this.name}_die_2`).attr(`src`,`./images/dice${this.die2.value}.png`);
         // Updates the current score
         $(`#${this.name}_current_roll`).text(`${this.currentScore}`);
         // Updates the total score
